@@ -1,0 +1,4 @@
+mysqldump -uroot -p example >\lesson2\example_dump.sql;
+mysql -uroot -p sample <\lesson2\example_dump.sql
+
+mysqldump -uroot -p --where="true limit 100" help_keyword > help_keyword_100.sql

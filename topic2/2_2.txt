@@ -1,0 +1,14 @@
+// 2-2 При помощи базы данных Redis решите задачу поиска имени пользователя по электронному адресу и наоборот, поиск электронного адреса пользователя по его имени.
+127.0.0.1:6379> HSET users test1 test@example.com
+(integer) 1
+127.0.0.1:6379> HSET users test2 test2@example.com
+(integer) 1
+127.0.0.1:6379> HGET users test2
+"test2@example.com"
+127.0.0.1:6379> HSET emails test@example.com test1
+(integer) 1
+127.0.0.1:6379> HSET emails test2@example.com test2
+(integer) 1
+127.0.0.1:6379> HGET emails test2@example.com
+"test2"
+127.0.0.1:6379>
